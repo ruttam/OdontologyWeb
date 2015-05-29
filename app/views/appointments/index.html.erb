@@ -1,0 +1,14 @@
+<div id="page_wrapper">
+  <div id="content">
+
+    <%= @patient.appointments.count %>
+
+
+    <% @patient.appointments.each do |f| %>
+        <%= f.date %>
+        <%= f.comment %>
+        <%= f.isUrgent %>
+    <% end %>
+    <%= render @patient.appointments %>
+
+  </div></div>

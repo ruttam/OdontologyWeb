@@ -1,0 +1,33 @@
+<div id="page_wrapper">
+  <div id="content">
+      <%= form_for @patient do |f| %>
+          <h2>Fill the form:</h2>
+          Name:<br>
+          <%= f.text_field :name %>
+        <br>
+        <br>
+          Surname:<br>
+          <%= f.text_field :surname %>
+          <br>
+          Personal code:<br>
+          <%= f.text_field :personalCode %>
+          <br>
+          Telephone number:<br>
+          <%= f.text_field :telephoneNr, placeholder: "86xxxxxxx" %>
+          <br>
+          Email address:<br>
+          <%= f.text_field :second_email , placeholder: "example@example.com" %>
+          <br>
+          Address:<br>
+          <%= f.text_area :address %>
+          <br>
+          <br>
+          <%= f.text_field :val, placeholder: "2*8=?" %>
+          <br>
+          <br>
+          <%= f.submit "Save" %>
+      <% end %>
+
+  </div>
+
+</div>

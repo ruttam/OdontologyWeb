@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>OdontologyWeb</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', 'googleapis' %>
+  <%= javascript_tag 'application.js', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= javascript_include_tag :application %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="sidebar">
+  <div id="logo">
+    <%= link_to root_path do %>
+        <%= image_tag "logo.png" %>
+    <% end %>
+  </div>
 
-<%= yield %>
+  <ul>
+    <li class="category">Menu</li>
 
+    <% if user_signed_in? %>
+        <% if @patient.id.nil? %>
+                <li><%= link_to "Your Appointmnets", new_patient_path %></li>
+        <% else %>
+            <li><%= link_to "Your Appointments", patient_path(@patient) %></li>
+        <% end %>
+
+        <% else %>
+        <li><%= link_to "News", root_path %></li>
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "Contacts" , new_message_path %></li>
+
+    <% end %>
+
+  </ul>
+
+  <ul>
+    <li class="category">Contact Us</li>
+    <li><a href="https://www.facebook.com/911rt">Facebook</a></li>
+    <li><a href="https://www.linkedin.com/pub/r%C5%ABta-tama%C5%A1auskait%C4%97/83/3a4/617">LinkedIn</a></li>
+    <li><a href="mailto:ruta.tamasauskaite@gmail.com">Email Us</a></li>
+  </ul>
+
+  <p class="sign_in"><%= link_to "Administrator", admin_url %></p>
+</div>
+
+<div id="main_content">
+  <div id="header">
+    <% if current_page?(root_path) %>
+        <div id="my_head"> All News</div>
+    <% elsif current_page?(about_path) %>
+        <div id="my_head"> <%= link_to "Back to the home page", root_path %></div>
+    <% else %>
+        <div id="my_head"> <%= link_to "Back to the home page", root_path %> </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <button class="button"><%= link_to "Log Out", destroy_customer_session_path, method: :delete %></button>
+
+    <% else %>
+        <button class="button"><%= link_to "Log In", new_user_session_path %></button>
+    <% end %>
+  </div>
+  <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+  <% end %>
+
+  <%= yield %>
+
+
+</div>
 </body>
 </html>

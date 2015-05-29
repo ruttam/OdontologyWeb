@@ -1,0 +1,51 @@
+<div id="page_wrapper">
+  <div id="content">
+    <div id="left1">
+      <h2>
+        Name Surname:
+      </h2>
+
+      <h3>
+        <%= @patient.name %> <%= @patient.surname%>
+      </h3>
+      <h2>
+        Personal Code:
+      </h2>
+
+      <h3>
+        <%= @patient.personalCode %>
+      </h3>
+
+      <h2>
+        Telephone Number:
+      </h2>
+
+      <h3>
+        <%= @patient.telephoneNr %>
+      </h3>
+
+      <h2>
+        E-mail address:
+      </h2>
+
+      <h3>
+        <%= @patient.email %>
+      </h3>
+
+      <h2>
+        Address:
+      </h2>
+
+      <h3>
+        <%= @patient.address %>
+      </h3>
+      <button class="button1"> <%= link_to 'Edit Information', edit_person_path(@patient) %></button>
+
+    </div>
+    <div id="right1">
+      <div id="profile_image">
+        <%= image_tag "patient.png" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
 
-  permit_params :name, :surname, :personalCode, :telephoneNr, :email, :address, :comments, :isActive, :lastAppointment
-# See permitted parameters documentation:
+  permit_params :email, :password
+  # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model

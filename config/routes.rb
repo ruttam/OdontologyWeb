@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :customers
+  devise_for :users, :controllers => { :registrations => "registrations" }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  resources :patients do
+    resources :appointments
+  end
   resources :posts
+  resources :person
+  resources :messages
   root "posts#index"
-
+  get '/about', to: 'pages#about'
+  get '/admin', to: 'admin/users#index'
+  get '/appointments', to: 'pages#appoitments'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

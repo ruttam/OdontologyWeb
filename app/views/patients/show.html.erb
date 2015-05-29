@@ -1,0 +1,31 @@
+<div id="page_wrapper">
+  <div id="content">
+    <button class="button1"><%= link_to "Add appointment", new_patient_appointment_path(@patient) %></button>
+    <h1>Your appointments</h1>
+    <br>
+    <h3>Number of the appointments: <%= @patient.appointments.count %></h3>
+    <br>
+    <% if @patient.appointments.present? %>
+        <% @patient.appointments.each do |f| %>
+            <h3>Appointment</h3>
+            Date:
+            <br>
+            <%= f.date %>
+            <br>
+            <br>
+            Your notes for the dentist:
+            <br>
+            <%= f.comment %>
+            <br>
+            <br>
+            Is it urgent for you?
+            <br>
+            <% if !f.isUrgent %>
+                No.
+            <% else %>
+                Yes.
+            <% end %>
+        <% end %>
+        <% end %>
+  </div>
+</div>

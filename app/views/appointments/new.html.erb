@@ -1,0 +1,21 @@
+<div id="page_wrapper">
+<div id="content">
+<%= form_for ([@patient, @appointment]) do |f| %>
+
+      <h3>Time of the appointment:</h3>
+      <br>
+    <%= f.datetime_select :date %>
+      <br>
+      <br>
+        <h3>Complaints about health:</h3>
+        <br>
+    <%= f.text_field :comment %>
+      <br>
+      <br>
+      <h3>Is it urgent (painful)?</h3>
+    <%= f.check_box :isUrgent %>
+      <br>
+      <br>
+    <%= f.submit %>
+<% end %>
+</div></div>

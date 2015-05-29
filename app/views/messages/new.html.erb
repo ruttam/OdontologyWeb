@@ -1,0 +1,103 @@
+<div id="page_wrapper">
+
+ <div id="content">
+
+    <div id="left">
+      <h2>Working Hours</h2>
+      <b>I-IV:  8.00-20.00</b>
+      <br>
+      <br>
+      <h2>Address</h2>
+      <b>Karaliaus Mindaugo pr. 50a,<br />
+        LT-44334,<br />
+        Kaunas,<br />
+        LITHUANIA</b>
+      <br>
+      <br>
+      <h2>Telephone Number</h2>
+      <b>+37064121622</b>
+      <br>
+      <br>
+      <h2>Company Code</h2>
+      <b>3000000000</b>
+      <br>
+      <br>
+      <h2>Head of the Clinic</h2>
+      <b>Rūta Tamašauskaitė</b>
+
+    </div>
+
+    <div id="right">
+
+      <%=form_for @message do |f| %>
+          <h2>Ask A Question</h2>
+          Your name:<br>
+          <%= f.text_field :sender %>
+          <br>
+          <br>
+          Your
+          Your email:<br>
+          <%= f.text_field :email, placeholder: "example@example.com" %>
+          <br>
+          <br>
+          Your question:<br>
+          <%= f.text_area :msg, placeholder: "Write your questions here!" %>
+          <br>
+          <%= f.text_field :val, placeholder: "2*3=?" %>
+          <br>
+          <br>
+          <%= f.submit("Send Message") %>
+      <% end %>
+
+    </div>
+   </div>
+
+
+    <div id="map-container">
+
+      <div id="map-canvas">
+
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+            <script>
+
+            function initialize() {
+                var myLatlng = new google.maps.LatLng(54.892783, 23.909091);
+                var contentString = '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">Vampire Clinic</h1>'+
+                        '<div id="bodyContent">'+
+                        '<b>Karaliaus Mindaugo pr. 50a,<br />' +
+                        'LT-44334,<br />' +
+                        'Kaunas,<br />'+
+                        'LITHUANIA</b>' +
+                        '</div>'+
+                        '</div>';
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                var mapOptions = {
+                    center: myLatlng,
+                    zoom: 16,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: 'Vampire Clinic'
+                });
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(map,marker);
+                });
+
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+      </div>
+
+    </div>
+
+  </div>

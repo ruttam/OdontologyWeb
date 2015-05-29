@@ -29,6 +29,8 @@ gem 'devise'
 
 gem 'puma'
 
+gem 'email_validator'
+
 
 
 # Use ActiveModel has_secure_password

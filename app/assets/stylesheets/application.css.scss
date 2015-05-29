@@ -1,0 +1,364 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "normalize";
+
+html, body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin-bottom: 0em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+#sidebar {
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #f5f7f9;
+  padding: 7em 0 0 0;
+  border-right: 1px solid #d6dce0;
+  #logo img{
+    width: 70px;
+    position: absolute;
+    right: 2em;
+    top: 1em;
+  }
+  ul {
+    list-style: none;
+    text-align: right;
+    padding-right: 0.5em;
+    .category {
+      font-weight: 700;
+      font-size: 1.3em;
+      text-transform: uppercase;
+      color: #33acb7;
+    }
+    li {
+      padding: .5em 0;
+      a {
+        color: #9eafba;
+        font-size: 1.25em;
+        text-decoration: none;
+        transition: all .4s ease;
+        &:hover {
+          color: #33acb7;
+        }
+      }
+    }
+    .active {
+      a {
+        color: #33acb7;
+      }
+    }
+  }
+  .sign_in {
+    position: absolute;
+    right: 3em;
+    top: 80%;
+    font-size: 1em;
+    color: #9eafba;
+  }
+}
+
+.button {
+
+  background: transparent;
+  border: 1px solid #d6dce0;
+  padding: .5em 1.0em;
+  float: right;
+  border-radius: 1.5em;
+  &:hover {
+    border: 1px solid #33acb7;
+    color: #33acb7;
+    a {
+      color: #33acb7 !important;
+    }
+  }
+}
+
+.button1 {
+  background: transparent;
+  border: 1px solid #d6dce0;
+  padding: .5em 1.0em;
+  float: none;
+  border-radius: 1.5em;
+  &:hover {
+    border: 1px solid #33acb7;
+    color: #33acb7;
+    a {
+      color: #33acb7 !important;
+    }
+  }
+}
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+#main_content {
+  margin-left: 200px;
+  #header {
+    padding: 0.6em 1em;
+    border-bottom: 0.5px solid #d6dce0;
+    background: #f5f7f9;
+    color: #9eafba;
+    height: 35px;
+    width: 98%;
+    a {
+      color: #9eafba;
+      text-decoration: none;
+      padding-top: 0.50em;
+      font-size: 1em;
+      text-shadow: none;
+    }
+
+    .log-in {
+      float: right;
+      padding-top: 0.50em;
+    }
+
+    #my_head{
+      float: left;
+      padding-top: 0.5em;
+      font-size: 1.25em;
+      text-shadow: none;
+    }
+
+    #my_prof {
+      float: right;
+      padding-right: 2em;
+      font-size: 1.25em;
+      padding-top: 0.50em;
+    }
+
+  }
+
+  .buttons {
+    position: absolute;
+    top: 70%;
+
+     .button {
+       font-size: .8em;
+       padding-right: -5em;
+       margin-right: 20em;
+       margin-top: 10px;
+     }
+   }
+
+  .post_wrapper {
+    padding: 3em;
+    border-bottom: 1px solid #d6dce0;
+    .title {
+      margin: 0;
+      a {
+        font-weight: 500;
+        text-decoration: none;
+        color: #2a2f35;
+        font-size: 1.5em;
+        &:hover {
+          color: #33acb7;
+        }
+      }
+    }
+    .date_and_author {
+      color: #9eafba;
+      margin: .5em 0 0 0;
+    }
+  }
+  #post_content {
+    padding: 1em 3em;
+    .title {
+      font-weight: 500;
+      text-decoration: none;
+      color: #2a2f35;
+      font-size: 2.5em;
+      margin-bottom: 0;
+    }
+    .body {
+      font-size: 1.1em;
+      line-height: 1.75;
+    }
+    .date_and_author {
+      color: #9eafba;
+      margin: .5em 0 2em 0;
+    }
+    #comments {
+      h2 {
+        margin: 3em 0 1em 0;
+        border-bottom: 1px solid #d6dce0;
+        padding-bottom: 0.5em;
+      }
+      h3 {
+        margin-top: 2em;
+      }
+      .comment {
+        border-bottom: 1px solid #d6dce0;
+        padding: 1.5em 2em;
+        .clear_both {
+          clear: both;
+        }
+        &:after {
+          clear: both;
+        }
+        .comment_content {
+          float: left;
+          .comment_name {
+            margin: 1em 0 0 0;
+            font-size: 0.7em;
+            text-transform: uppercase;
+          }
+          .comment_body {
+            font-size: 1.2em;
+            margin: 0.2em 0 0 0;
+          }
+          .comment_time {
+            margin-top: 1.2em;
+            font-size: .8em;
+          }
+        }
+      }
+      input[type="text"], textarea {
+        width: 50%;
+      }
+    }
+  }
+  #page_wrapper {
+    padding: 1em;
+    #profile_image {
+      width: 200px;
+      float: right;
+      margin-right: 20em;
+      img {
+        width: 100%;
+        border-radius: 0.35em;
+      }
+    }
+    #content {
+      h1 {
+        font-weight: 500;
+      }
+      h2 {
+        color: #33acb7;
+      }
+      p {
+        font-size: 1.1em;
+        line-height: 1.75;
+      }
+      a {
+        color: #33acb7;
+        font-weight: 100;
+        text-decoration: none;
+      }
+      #left, #right {
+        width: 40%;
+
+        background: white;
+      }
+
+      #left1 {
+        float: left;
+        padding-left: 2em;
+        width: 15em;
+      }
+      #right1 {
+        float: right;
+        padding-right: 25em;
+      }
+
+
+      #left {
+        float: left;
+        padding-left: 7em;
+      }
+      #right {
+        float: right;
+        padding-right: 7em;
+      }
+    }
+
+    #map-container {
+      height: 300px;
+      border-radius: 16px 16px;
+      border-color: #fff;
+      border-style: solid;
+      box-shadow: 2px 2px 10px #B1B1B1;
+      margin-top: 600px;
+      border-width: 7px;
+      width: 80%;
+      margin-left: 3em;
+    }
+
+    #map-canvas {
+      height: 300px;
+      width: 91%;
+      padding-left: 6em;
+    }
+
+  }
+  .alert {
+    padding-left: 1em;
+    padding-top: 1em;
+    color: #B00100;
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.75;
+  }
+
+  .links {
+    margin: 2em 0;
+  }
+  input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea {
+    width: 90%;
+    border: 1px solid #d6dce0;
+    border-radius: .35em;
+    margin-top: 10px;
+    padding: .5em 1em;
+    line-height: 1.75;
+  }
+  input[type="text"] {
+    height: 35px;
+  }
+  textarea {
+    min-height: 180px;
+  }
+  input[type="submit"] {
+    outline: none;
+    background: transparent;
+    border: 1px solid #d6dce0;
+    padding: .5em 1.5em;
+    font-size: 1.1em;
+    border-radius: 1.5em;
+    margin-left: .5em;
+    &:hover {
+      border: 1px solid #33acb7;
+      color: #33acb7;
+    }
+  }
+}
