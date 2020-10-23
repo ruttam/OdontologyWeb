@@ -23,4 +23,7 @@
 # Ignore generated Gemfile
 Gemfile.lock
 
+# Ignore logs
+/log/*
 
+config/secrets.yml
