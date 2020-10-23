@@ -1,10 +1,15 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Fixed due to Rails 4 bug, Read more: https://github.com/rails/rails/issues/35161
+gem 'sqlite3', '1.3.13'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,7 +30,8 @@ gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', group: :doc
 
-gem 'activeadmin', github: 'activeadmin'
+# ActiveAdmin from >= 1.3.1 needs Ruby >= 2.3
+gem 'activeadmin', '~> 1.0'
 
 gem 'devise'
 
@@ -54,6 +60,7 @@ group :development, :test do
   gem 'web-console'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 2.0'
 end
 
+gem 'web-console', '~> 2.0', group: :development
