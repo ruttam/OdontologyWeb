@@ -12,9 +12,11 @@
 <body>
 <div id="sidebar">
   <div id="logo">
+
     <%= link_to root_path do %>
         <%= image_tag "logo.png" %>
     <% end %>
+
   </div>
 
   <ul>
@@ -26,12 +28,10 @@
         <% else %>
             <li><%= link_to "Your Appointments", patient_path(@patient) %></li>
         <% end %>
-
         <% else %>
         <li><%= link_to "News", root_path %></li>
         <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "Contacts" , new_message_path %></li>
-
     <% end %>
 
   </ul>
@@ -48,6 +48,7 @@
 
 <div id="main_content">
   <div id="header">
+
     <% if current_page?(root_path) %>
         <div id="my_head"> All News</div>
     <% elsif current_page?(about_path) %>
@@ -58,17 +59,17 @@
 
     <% if user_signed_in? %>
         <button class="button"><%= link_to "Log Out", destroy_customer_session_path, method: :delete %></button>
-
     <% else %>
         <button class="button"><%= link_to "Log In", new_user_session_path %></button>
     <% end %>
+
   </div>
+
   <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert") %>
   <% end %>
 
   <%= yield %>
-
 
 </div>
 </body>

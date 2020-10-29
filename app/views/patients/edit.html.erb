@@ -1,7 +1,7 @@
 <div id="page_wrapper">
 
 
-<%= form_for @patient do |f| %>
+<%= form_with model: @patient do |f| %>
     <% if @patient.errors.any? %>
           <ul>
             <% @patient.errors.full_messages.each do |msg| %>

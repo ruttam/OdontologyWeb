@@ -2,14 +2,14 @@
 
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 
 # Use sqlite3 as the database for Active Record
 # Fixed due to Rails 4 bug, Read more: https://github.com/rails/rails/issues/35161
-gem 'sqlite3', '1.3.13'
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,4 +63,3 @@ group :development, :test do
   gem 'spring', '~> 2.0'
 end
 
-gem 'web-console', '~> 2.0', group: :development

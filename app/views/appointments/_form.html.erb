@@ -1,11 +1,7 @@
 <div id="page_wrapper">
   <div id="content">
 
-    <%= form_for([@patient, @patient.appointments.build]) do |f| %>
-
-
-
-
+    <%= form_with model: @patient, builder: @patient.appointments.build do |f| %>
         <%= f.text_area :comment %>
         <%= f.check_box :isUrgent %>
     <% end %>

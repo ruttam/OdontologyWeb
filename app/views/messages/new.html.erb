@@ -29,7 +29,7 @@
 
     <div id="right">
 
-      <%=form_for @message do |f| %>
+      <%=form_with model: @message do |f| %>
           <h2>Ask A Question</h2>
           Your name:<br>
           <%= f.text_field :sender %>
