@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+
   resources :patients do
     resources :appointments
   end

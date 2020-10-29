@@ -1,6 +1,6 @@
 <div id="page_wrapper">
   <div id="content">
-      <%= form_for @patient do |f| %>
+      <%= form_with model: @patient do |f| %>
           <h2>Fill the form:</h2>
           Name:<br>
           <%= f.text_field :name %>

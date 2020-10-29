@@ -1,6 +1,6 @@
 <div id="page_wrapper">
 <div id="content">
-<%= form_for ([@patient, @appointment]) do |f| %>
+<%= form_with(model: [:patient, @appointment]) do |f| %>
 
       <h3>Time of the appointment:</h3>
       <br>
