@@ -1,46 +1,41 @@
 <div id="page_wrapper">
   <div id="content">
     <div id="left1">
-      <h2>
-        Name Surname:
-      </h2>
-      <h3>
-        <%= @patient.name %> <%= @patient.surname%>
-      </h3>
-      <br>
-      <h2>
-        Personal Code:
-      </h2>
+      <%= form_with model: @patient do |f| %>
 
-      <h3>
-        <%= @patient.personalCode %>
-      </h3>
-        <br>
-      <h2>
-        Telephone Number:
-      </h2>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
 
-      <h3>
-        <%= @patient.telephoneNr %>
-      </h3>
-        <br>
-      <h2>
-        E-mail address:
-      </h2>
+        <p>
+          <%= f.label :surname %><br>
+          <%= f.text_field :surname %>
+        </p>
 
-      <h3>
-        <%= @patient.second_email %>
-      </h3>
-        <br>
-      <h2>
-        Address:
-      </h2>
+        <p>
+          Personal Code (can not be changed)
+          <%= f.text_field :personalCode, :readonly => true %>
+        </p>
 
-      <h3>
-        <%= @patient.address %>
-      </h3>
-      <br>
-      <button class="button1"> <%= link_to 'Edit Information', edit_patient_url(@patient) %></button>
+        <p>
+          Telephone Number<br>
+          <%= f.text_field :telephoneNr %>
+        </p>
+
+        <p>
+          E-mail address<br>
+          <%= f.text_field :email %>
+        </p>
+        <p>
+        <p>
+          Address<br>
+          <%= f.text_area :address %>
+        </p>
+
+        <p>
+          <%= f.submit 'Save'%>
+        </p>
+
+      <% end %>
 
     </div>
     <div id="right1">
