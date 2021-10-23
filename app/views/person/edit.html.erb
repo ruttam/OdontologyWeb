@@ -1,5 +1,5 @@
 <div id="page_wrapper">
-
+  <div id="content">
 
   <%= form_with model: @patient do |f| %>
       <% if @patient.errors.any? %>
@@ -10,7 +10,6 @@
           </ul>
       <% end %>
 
-
       <%= f.label :name %><br>
       <%= f.text_field :name %>
 
@@ -20,7 +19,7 @@
       </p>
 
       <p>
-        Personal Code (can not be changed)
+        Personal Code
         <%= f.text_field :personalCode, :readonly => true %>
       </p>
 
@@ -38,13 +37,9 @@
         <%= f.text_area :address %>
       </p>
 
-
       <p>
         <%= f.submit 'Save Changes'%>
       </p>
-
-
-
-  <% end %>
-
+    <% end %>
+  </div>
 </div>

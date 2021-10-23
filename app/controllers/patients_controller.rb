@@ -36,12 +36,6 @@ class PatientsController < ApplicationController
       if [@patient.name, @patient.surname, @patient.personalCode, @patient.telephoneNr].any?(&:blank?)
         flash.now[:notice] = "There are empty fields!"
         render :new
-      elsif @patient.personalCode.length != 11
-        flash[:notice] = "Check your personal code!"
-        render :new
-      elsif @patient.telephoneNr.length != 9
-        flash[:notice] = "Check your telephone number (must be 9 numbers)!"
-        render :new
       elsif !EmailValidator.valid?(@patient.second_email)
         flash[:notice] = "Bad email format!"
         render :new
