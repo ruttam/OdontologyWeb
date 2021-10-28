@@ -31,7 +31,7 @@ gem 'jbuilder'
 gem 'sdoc', group: :doc
 
 # ActiveAdmin from >= 1.3.1 needs Ruby >= 2.3
-gem 'activeadmin', '~> 1.0'
+gem 'activeadmin'
 
 gem 'devise'
 
